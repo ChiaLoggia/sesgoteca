@@ -1,0 +1,10 @@
+[
+  {"id":"confirmacion","title":"Sesgo de confirmación","category":"Sesgos","color":"red","definition":"Tendencia a buscar, interpretar y recordar información que confirma lo que ya creemos, y a dar menos peso a la evidencia que lo contradice.","videos":[]},
+  {"id":"paternalismo","title":"Paternalismo libertario","category":"Conceptos","color":"yellow","definition":"Enfoque de diseño de políticas que busca orientar a las personas hacia decisiones que mejoren su bienestar, sin prohibir opciones ni restringir de forma significativa su libertad de elegir.","videos":[]},
+  {"id":"anclaje","title":"Efecto anclaje","category":"Sesgos","color":"green","definition":"Tendencia a dar demasiado peso a una primera referencia —como un precio o una cifra— al hacer una estimación o tomar una decisión.","videos":[]},
+  {"id":"disponibilidad","title":"Heurística de disponibilidad","category":"Heurísticas","color":"blue","definition":"Atajo mental que nos lleva a estimar qué tan frecuente o probable es algo según la facilidad con la que recordamos ejemplos.","videos":[]},
+  {"id":"perdida","title":"Aversión a la pérdida","category":"Conceptos","color":"blue","definition":"En muchas decisiones, una pérdida tiene mayor impacto subjetivo que una ganancia equivalente. Por eso, evitar perder puede pesar más que la posibilidad de ganar.","videos":[]},
+  {"id":"hundido","title":"Costo hundido","category":"Sesgos","color":"green","definition":"El sesgo aparece cuando seguimos invirtiendo tiempo, dinero o esfuerzo por lo que ya gastamos, aunque esos recursos no puedan recuperarse y continuar ya no sea la mejor opción.","videos":[]},
+  {"id":"presente","title":"Sesgo del presente","category":"Sesgos","color":"yellow","definition":"Tendencia a dar un peso desproporcionado a las recompensas inmediatas frente a las futuras, incluso cuando esperar podría resultar más conveniente.","videos":[]},
+  {"id":"halo","title":"Efecto halo","category":"Sesgos","color":"red","definition":"Una impresión positiva sobre una característica de alguien o algo influye en cómo evaluamos otras características, aunque no estén relacionadas.","videos":[]}
+]
