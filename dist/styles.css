@@ -11,7 +11,7 @@
 .search input{background:none;border:0;min-width:0;width:100%;font-size:12px;color:var(--ink);outline-offset:5px}
 .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 22px;align-items:start}
 .card{--card:var(--red);border:1.5px solid var(--ink);border-radius:12px;background:#f5eedf;overflow:hidden;box-shadow:3px 4px 0 var(--ink);transition:transform .2s}
-.card:hover{transform:translateY(-3px)}
+@media(hover:hover) and (pointer:fine){.card:not(.open):hover{transform:translateY(-3px)}}
 .card[data-color=yellow]{--card:var(--yellow)}
 .card[data-color=green]{--card:var(--green)}
 .card[data-color=blue]{--card:var(--blue)}
@@ -22,19 +22,23 @@ h3{font-family:'Space Grotesk',sans-serif}
 .card.open{grid-column:span 2}
 .card.open .card-toggle{min-height:106px}
 .card.open h3{font-size:29px}
-.card-panel{animation:reveal .25s ease}
-.video-shell{background:var(--ink);aspect-ratio:16/9;display:grid;place-items:center;color:var(--paper)}
-video,iframe{width:100%;height:100%;border:0;display:block}
+.card-panel{min-width:0}
+.video-shell{position:relative;width:100%;min-width:0;min-height:0;background:var(--ink);aspect-ratio:16/9;display:grid;place-items:center;color:var(--paper);overflow:hidden;isolation:isolate}
+.video-shell>video,.video-shell>iframe{position:absolute;inset:0;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;border:0;display:block}.video-shell>video{object-fit:contain}
 .video-placeholder{display:grid;place-items:center}
 .play-circle{border:1px solid #a69d87;border-radius:50%;width:46px;height:46px;display:grid;place-items:center;font-size:17px;opacity:.55}
-.video-nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:8px 16px;font-size:10px}
-.icon{border:1px solid var(--ink);border-radius:50%;height:30px;width:30px;color:var(--ink);background:transparent;font-size:20px;display:inline-grid;place-items:center}
+.video-nav{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;align-items:center;gap:12px;min-height:64px;border-bottom:1px solid var(--line);padding:10px 16px;font-size:12px}.video-count{text-align:center;font-variant-numeric:tabular-nums}
+.icon{appearance:none;box-sizing:border-box;flex:none;border:1px solid var(--ink);border-radius:50%;height:44px;width:44px;padding:0;color:var(--ink);background:transparent;display:grid;place-items:center;line-height:1;touch-action:manipulation}.icon svg{display:block;width:20px;height:20px;pointer-events:none}
 .definition{padding:22px}
 .definition p{font-size:13px;line-height:1.65;margin:0}
-.source-link{display:block;margin-top:12px;font-size:18px;text-align:right}
+.source-link{display:grid;place-items:center;width:44px;height:44px;margin:8px 0 -8px auto;font-size:20px;line-height:1;touch-action:manipulation}
 #toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:13px 20px;border-radius:6px;font-size:12px;z-index:10;display:none;max-width:90vw}
 @keyframes reveal{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 @media(min-width:1500px){.collection{max-width:1320px;margin-left:auto;margin-right:auto}}
 @media(max-width:950px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.card h3{font-size:23px}}
 @media(max-width:700px){.collection{padding:32px 0 50px}.toolbar{align-items:stretch;flex-direction:column;gap:20px;padding-bottom:22px;margin-bottom:26px}.search{width:100%}.filter{padding:8px 13px;font-size:11px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 15px}.card-toggle{min-height:196px;padding:20px 14px}.card h3{font-size:clamp(17px,5vw,23px)}.card.open{grid-column:span 2}.card.open h3{font-size:26px}.card.open .card-toggle{min-height:96px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+.card{min-width:0;overflow-anchor:none}.search input{font-size:16px}.card-toggle{touch-action:manipulation}
+@media(max-width:700px){.video-shell{aspect-ratio:4/3;min-height:250px}.card.open{grid-column:1/-1}.definition{padding:18px}.video-nav{padding:10px 14px}}
+@media(max-width:600px){.grid{grid-template-columns:minmax(0,1fr);gap:20px}.card-toggle{min-height:132px;padding:24px}.card h3{font-size:25px}.card.open .card-toggle{min-height:88px}.card.open h3{font-size:25px}}
